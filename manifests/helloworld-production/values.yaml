@@ -7,4 +7,4 @@ image:
   tag: stable
 
 service:
-  nodePort: 30090 
+  nodePort: 30091
