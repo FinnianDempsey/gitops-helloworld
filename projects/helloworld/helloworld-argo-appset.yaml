@@ -13,6 +13,8 @@ spec:
       name: 'helloworld-{{namespace}}-app'
       labels: 
         environment: '{{namespace}}'
+      annotations:
+        codefresh.io/product: helloworld2  
     spec:
       project: default
       source:
