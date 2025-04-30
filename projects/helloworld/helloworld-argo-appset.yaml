@@ -11,6 +11,8 @@ spec:
   template: 
     metadata:
       name: 'helloworld-{{namespace}}-app'
+      labels: 
+        environment: '{{namespace}}'
     spec:
       project: default
       source:
