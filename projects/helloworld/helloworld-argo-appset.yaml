@@ -14,7 +14,7 @@ spec:
       labels: 
         environment: '{{namespace}}'
       annotations:
-        codefresh.io/product: helloworld2  
+        codefresh.io/product: helloworld  
     spec:
       project: default
       source:
