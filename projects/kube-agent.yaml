@@ -12,7 +12,7 @@ spec:
     name: in-cluster
     namespace: default
   source:
-    repoURL: https://finniandempsey.github.io/helm-repo/index.yaml
+    repoURL: https://finniandempsey.github.io/helm-repo/
     targetRevision: 0.1.1
     chart: helm-custom-html
   syncPolicy:
