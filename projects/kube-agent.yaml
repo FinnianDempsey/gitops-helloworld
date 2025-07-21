@@ -12,7 +12,7 @@ spec:
     name: in-cluster
   source:
     repoURL: https://github.com/OctopusDeploy/helm-charts.git
-    targetRevision: ''
+    targetRevision: main
     chart: kubernetes-agent
     helm:
       valueFiles:
