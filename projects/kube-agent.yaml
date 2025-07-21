@@ -10,13 +10,11 @@ spec:
   project: default
   destination:
     name: in-cluster
+    namespace: default
   source:
-    repoURL: https://github.com/OctopusDeploy/helm-charts.git
-    targetRevision: main
-    chart: kubernetes-agent
-    helm:
-      valueFiles:
-        - values.yaml
+    repoURL: https://ghcr.io/octopusdeploy/octopusdeploy-helm
+    targetRevision: 1.6.0
+    chart: octopusdeploy-helm
   syncPolicy:
     automated:
       prune: false
