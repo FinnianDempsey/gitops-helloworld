@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloworld-staging
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground
+  labels: 
+    environment: 'staging'
+  annotations:
+    codefresh.io/product: helloworld 
+spec:
+  project: default
+  source:
+    path:  manifests/helloworld-staging/
+    repoURL: https://github.com/FinnianDempsey/gitops-helloworld.git
+    targetRevision: main
+    helm:
+      valueFiles:
+        - 'values.yaml'
+  destination:
+    name: in-cluster
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
